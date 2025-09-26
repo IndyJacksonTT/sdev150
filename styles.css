@@ -1,23 +1,36 @@
 /*Styles for the Header.*/
+:root{
+  --panel-bg: rgba(40,40,40,0.55);
+  --panel-border: rgba(255,255,255,0.18);
+  --panel-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 0px 0 rgba(255,255,255,0.1);
+}
+
 header {
-    background-color: grey;
-    color: black;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 10px;
-    background-image: radial-gradient(circle at center, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%), url(banner_background.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    max-height: 15vh;
+    background: var(--panel-bg);
+    box-shadow: var(--panel-shadow);
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+    height: 15vh;
 }
 
 body {
     margin: 0;
     padding: 0;
 
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(0,0,0,0) 65%, rgba(0,0,0,0.9) 100%),
+    url("main_background.jpg") center/cover no-repeat;
+  z-index: -1;
 }
 
 h1 {
@@ -57,40 +70,36 @@ header a:hover {
     background-color: red;
     text-decoration: underline;
 }
+
 /*Styles for the Sidebar.*/
+
 .container {
     display: flex;
 }
 
 .sidebar {
-    width: auto;
-    min-width: 240px;
-    background-color: black;
+    width: 7vw;
     color: white;
-    height: auto;
-    min-height: 82.89vh;
-    padding: 0 20px;
+    height: 85vh;
+    padding: 0 15px;
     display: flex;
     flex-direction: column;
-    background-image: radial-gradient(circle at center, rgba(0,0,0,0) 80%, rgba(0,0,0,1) 100%),linear-gradient(to right,
-      rgba(0,0,0,0.7) 0%,
-      rgba(0,0,0,0) 20%,
-      rgba(0,0,0,0) 80%,
-      rgba(0,0,0,0.7) 100%
-    ), url(sidebar_background.png);
-    
+    background: var(--panel-bg);
+    border-right: 1px solid var(--panel-border);
+    box-shadow: var(--panel-shadow);
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    margin-top: 10px;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    font-size: 50px;  
+    font-size: 25px;  
 }
 
 .sidebar li {
@@ -106,7 +115,7 @@ header a:hover {
     padding: 15px 0;
     text-align: center;
     border: 2px solid white;
-    border-radius: 50px;
+    border-radius: 30px;
     transition: all 0.25s ease;
     background-color: rgba(0,0,0,.5);
 }
@@ -114,29 +123,30 @@ header a:hover {
 .sidebar a:hover {
     background-color: rgba(255,0,0,0.65);
     transform: scale(1.1);
-    color: yellow;
+    color: rgb(0, 0, 0);
     box-shadow: 0 0 20px rgba(255,0,0,0.65);
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
 }
 
 .sidebar a.active {
     text-decoration: underline;
-    background-color: rgba(140,0,0,0.75);
-    color: white;
+    background-color: rgba(255, 0, 0, 0.482);
+    color: black;
     font-weight: bold;
     transform: scale(0.95);
     box-shadow: 0 0 20px white;
+    font-style: italic;
+    text-decoration: underline;
 }
 
 /*Styles for the page content.*/
+
 .content {
     flex: 1;
     padding: 20px;
-    background-color: white;
     text-align: center;
-    background-image: radial-gradient(circle at center, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%),url("main_background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .content h2 {
@@ -148,7 +158,7 @@ header a:hover {
     display: table;
     border-radius: 20px;
     padding: 10px 20px;
-    margin: 0 auto 100px;
+    margin: 0 auto 50px;
 }
 
 .content p {
@@ -161,4 +171,89 @@ header a:hover {
     display: table;
     padding: 10px 20px;
     margin: 10px auto;
+}
+
+#gallery {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 0 auto;
+    height: 50vh;
+    width: 50vw;
+    padding: 8px;
+    overflow: hidden;
+}
+
+#galleryselector {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid black;
+    border-radius: 20px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    padding: 6px 10px;
+    max-width: 30vw;
+    width: fit-content;
+}
+
+.gallery_slide {
+  font-size: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.gallery_notch {
+    flex: 0 0 auto;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ccccccaa;
+    cursor: pointer;
+    aspect-ratio: 1;
+    line-height: 0;
+    display: block;
+}
+.gallery_notch:hover {
+    background-color: rgba(255,0,0,0.65);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255,0,0,0.65);
+}
+.gallery_notch.active {
+    background-color: rgba(255, 0, 0, 0.482);
+    transform: scale(0.95);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.482);
+}
+#galleryRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.galleryArrow {
+    font-size: 50px;
+    padding: 6px 14px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 2px solid white;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    height: 50%;
+}
+
+.galleryArrow:hover {
+  background: rgba(255,0,0,0.7);
 }

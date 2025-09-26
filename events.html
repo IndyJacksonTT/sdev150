@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>The Cursed Ark</title>
+        <title>The Cursed Ark Events Page</title>
         <link rel="stylesheet" href="./styles.css">
+        <script src="code.js" defer></script>
         <link rel="preload" as="image" href="main_background.jpg">
         <link rel="preload" as="image" href="banner_background.png">
         <link rel="preload" as="image" href="sidebar_background.png">
@@ -27,6 +28,13 @@
              <!-- Page Content -->
               <main class="content" role="main">
                 <h2>Welcome to The Cursed Ark events page!</h2>
+                <div id="galleryRow">
+                    <button id="prevSlide" class="galleryArrow">⟨</button>
+                    <div id="gallery"></div>
+                    <button id="nextSlide" class="galleryArrow">⟩</button>
+                </div>
+                <div id="galleryselector"></div>
+                </div>
               </main>
         </div>
     </body>
