@@ -2,15 +2,16 @@
 <html lang="en">
     <head>
         <title>The Cursed Ark Info Page</title>
+        <meta name="description" content="The Cursed Ark's info page. Find all relevant information on the cluster! Rates, config, maps, rules, and more!">
         <link rel="stylesheet" href="./styles.css">
-        <script src="code.js" defer></script>
+        <script src="infoCode.js" defer></script>
         <link rel="preload" as="image" href="main_background.jpg">
-        <link rel="preload" as="image" href="banner_background.png">
-        <link rel="preload" as="image" href="sidebar_background.png">
     </head>
     <body>
         <header>
-            <img src="cursedlogo.png" alt="The Cursed Ark" width="50%" class="logo">
+            <a href="index.html">
+                <img src="cursedlogo.png" alt="The Cursed Ark" width="50%" class="logo">
+            </a>
             <!-- <a href="#">Join</a> -->
         </header>
         <div class="container">
@@ -26,11 +27,48 @@
              </nav>
 
              <!-- Page Content -->
-              <main class="content" role="main">
-                <h2>Welcome to The Cursed Ark info page!</h2>
-                <button id="testbutton">press me to test</button>
-                <p id="buttonoutput">hi</p>
-              </main>
+        <main class="content" role="main">
+            <h2>Info</h2>
+            <div class="infoPanel">
+                <div id="infoSlideSelector" style="margin-top: 0; border-top: 0;">
+                    <button class="infoNotch" id="infoMainNotch">Main</button>
+                    <button class="infoNotch" id="infoRatesNotch">Rates</button>
+                    <button class="infoNotch" id="infoRulesNotch">Rules</button>
+                    <button class="infoNotch" id="infoShopNotch">Shop</button>
+                    <button class="infoNotch" id="infoModsNotch">Mods</button>
+                    <button class="infoNotch" id="infoChangesNotch" style="font-size: 350%;">Changes</button>
+                    <button class="infoNotch" id="infoIssuesNotch">Issues</button>
+                </div>
+                <div id="infoBody">
+                    <div id="mainInfoSlide" style="display: none;">
+                        <p>The Cursed Ark is a friendly and chill Ark community dedicated to providing a superior Ark experience for player's who don't have a ton of time but don't want to play on a super boosted server.</p>
+                        <p style="margin-bottom: 10vh;">We do this with higher yet still close to vanilla rates. "Quality of Life" mods to reduce the tedious bits of the game that suck your life away; and fun events to keep you entertained!</p>
+                        <p>We offer a superior experience to vanilla Ark by having tons of modded dinos that have been balanced to not overshadow vanilla tames and blend in perfectly!</p>
+                        <p style="margin-bottom: 5vh;">Our hybrid PVP/PVE system lets players play how they want. If you want to wage war and destroy your enemies or build beautiful kingdoms the Cursed Ark is the place for you!</p>
+                        <p>Check out the details by clicking the buttons to the left!</p>
+                    </div>
+                    <div id="ratesInfoSlide" style="display: none;">
+                        <p>HELLO</p>
+                    </div>
+                    <div id="rulesInfoSlide" style="display: none;">
+                        <p>i am rules</p>
+                    </div>
+                    <div id="shopInfoSlide" style="display: none;">
+                        <p>i am a shop. boopbeep</p>
+                    </div>
+                    <div id="modsInfoSlide" style="display: none;">
+                        <p>modifications!</p>
+                    </div>
+                    <div id="changesInfoSlide" style="display: none;">
+                        <p>he was..... changed.... into a shape....<br>there was nothing worth saving...</p>
+                    </div>
+                    <div id="issuesInfoSlide" style="display: none;">
+                        <p>i have issues</p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
         </div>
     </body>
 </html>

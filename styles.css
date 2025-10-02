@@ -59,18 +59,6 @@ header h1 {
     text-align: center;
 }
 
-header a {
-    position: absolute;
-    right: 30%;
-    top: 2%;
-    font-size: 40px;
-}
-
-header a:hover {
-    background-color: red;
-    text-decoration: underline;
-}
-
 /*Styles for the Sidebar.*/
 
 .container {
@@ -149,6 +137,13 @@ header a:hover {
     text-align: center;
 }
 
+.content img {
+    position: absolute;
+    top: 40%;
+    right: 50%;
+    align-self: center;
+}
+
 .content h2 {
     font-size: 50px;
     text-align: center;
@@ -161,7 +156,7 @@ header a:hover {
     margin: 0 auto 50px;
 }
 
-.content p {
+p {
     font-size: 20px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.7);
@@ -172,6 +167,8 @@ header a:hover {
     padding: 10px 20px;
     margin: 10px auto;
 }
+
+/*Styles for the gallery in the events page.*/
 
 #gallery {
     background-color: rgba(0, 0, 0, 0.7);
@@ -256,4 +253,75 @@ header a:hover {
 
 .galleryArrow:hover {
   background: rgba(255,0,0,0.7);
+}
+
+/*Styles for the gallery and the main body of the info page.*/
+.infoPanel{
+  display:flex;
+  width:70vw;
+  height: 60vh;
+  margin:0 auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+#infoSlideSelector {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 10vw;
+    align-items: stretch;
+    border: 2px solid black;
+    border-right: none;
+    border-radius:20px 0 0 20px;
+    gap: 8px;
+    padding: 10px;
+}
+
+#infoBody {
+    border: 2px solid black;
+    border-left: 0 solid black;
+    border-radius:0 20px 20px 0;
+    width: 100%;
+    padding: 12px;
+    overflow: auto;
+}
+
+#infoBody  p {
+    font-size: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: 0;
+    border-radius: 0;
+    display: table;
+    padding: 10px 20px;
+    margin: 10px auto;
+}
+
+.infoNotch {
+    flex: 1;
+    min-height: 0;
+    border-radius: 0;
+    display: flex;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.35);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-size: 400%;
+    color: white;
+    background-color: rgba(0,0,0,.5);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.infoNotch.active{
+  border-right-color: transparent;
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  background: linear-gradient(to right, rgba(255, 0, 0, 0.25) 30%, rgba(255, 0, 0, 0.25) 70%);
+  box-shadow: 0 0 25px rgba(255,0,0,0.5);
+  text-decoration: underline;
+  font-weight: bold; font-style: italic;
 }
