@@ -1,19 +1,7 @@
-// This is all for a test
-const button = document.getElementById('testbutton')
-const output = document.getElementById('buttonoutput')
-
-
-if (button && output) {
-    button.addEventListener('click', ()=>{
-        output.textContent="I was clicked";
-});
-}
-// Test ends here
-
 // Code for the Gallery on events page.
 const galleryItems = [
     "No events are active at the moment....\nServer is wiping when Valguero comes out!\nSo check back here by then for information on all the newest events!",
-    "Nothing on this page......."
+    "Nothing on this page.......",
 ];
 
 const gallery = document.getElementById("gallery");

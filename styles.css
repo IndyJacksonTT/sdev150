@@ -68,7 +68,6 @@ header h1 {
 .sidebar {
     width: 7vw;
     color: white;
-    height: 85vh;
     padding: 0 15px;
     display: flex;
     flex-direction: column;
@@ -83,11 +82,12 @@ header h1 {
     list-style: none;
     padding: 0;
     margin: 0;
-    flex: 1;
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    font-size: 25px;  
+    font-size: 25px;
+    height: 85vh;  
 }
 
 .sidebar li {
@@ -129,19 +129,17 @@ header h1 {
     text-decoration: underline;
 }
 
+#backButton:hover {
+    text-decoration: none;
+
+}
+
 /*Styles for the page content.*/
 
 .content {
     flex: 1;
     padding: 20px;
     text-align: center;
-}
-
-.content img {
-    position: absolute;
-    top: 40%;
-    right: 50%;
-    align-self: center;
 }
 
 .content h2 {
@@ -154,6 +152,15 @@ header h1 {
     border-radius: 20px;
     padding: 10px 20px;
     margin: 0 auto 50px;
+}
+
+.content img {
+    align-items: center;
+    display: block;
+    margin: 20px auto;
+    height: clamp(48px, 10vw, 120px);
+    width: auto;
+    object-fit: contain;
 }
 
 p {
@@ -316,6 +323,10 @@ p {
     font-family: 'Times New Roman', Times, serif;
 }
 
+#infoChangesNotch {
+    font-size: 300%
+}
+
 .infoNotch.active{
   border-right-color: transparent;
   border-right: none;
@@ -324,4 +335,202 @@ p {
   box-shadow: 0 0 25px rgba(255,0,0,0.5);
   text-decoration: underline;
   font-weight: bold; font-style: italic;
+}
+
+/*Style control for mobile devices.*/
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: auto;
+    height: 22vh;
+    border-right: none;
+    border-bottom: 1px solid var(--panel-border);
+    padding: 15px;
+  }
+
+  .sidebar ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+    height: 22vh;
+
+  }
+
+  .sidebar li {
+    margin: 0;
+    flex: 1 1 calc(50% - 8px);
+  }
+  
+  #backButton {
+    display: none;
+  }
+
+  header {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--panel-bg);
+    box-shadow: var(--panel-shadow);
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+    height: 10vh;
+    }
+  header .logo {
+    display: block;
+    margin: 20px auto;
+    height: auto;
+    width: 100vw;
+    object-fit: contain;
+    filter: 
+    drop-shadow(0 0 8px rgba(255,0,0,0.55))
+    drop-shadow(0 0 18px rgba(255,0,0,0.35))
+    drop-shadow(0 0 30px rgba(0, 0, 0, 0.40));
+
+    }
+
+.content h2 {
+    font-size: 30px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 2px solid black;
+    display: table;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 0 auto 25px;
+    }
+
+.content img {
+    width: clamp(10vw, 70vw, 100vw);
+    height: clamp(10vh, 10vh, 30vh);
+    }
+
+p {
+    font-size: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: table;
+    padding: 10px 20px;
+    margin: 10px auto;
+}   
+
+.infoPanel{
+  width:90vw;
+  height: 50vh;
+}
+
+#infoBody {
+    padding: 0;
+}
+
+#infoSlideSelector {
+    flex: 0 0 10vw;
+}
+
+.infoNotch {
+    flex: 1;
+    font-size: 150%;
+}
+
+#infoChangesNotch {
+    font-size: 150%
+}
+
+#gallery {
+    height: 30vh;
+    width: 70vw;
+}
+
+.galleryArrow {
+    display: none;
+}
+
+.gallery_notch {
+    width: 40px;
+    height: 40px;
+}
+
+}
+
+/*Styles for my test form.*/
+form {
+  font-size: 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: 2px solid black;
+  border-radius: 20px;
+  display: table;
+  padding: 20px 30px;
+  margin: 20px auto;
+}
+
+form input, form button {
+  display: block;
+  margin: 10px auto;
+  padding: 8px 12px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+form input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255,0,0,0.6);
+  border-color: rgba(255,0,0,0.7);
+}
+
+form button {
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: rgba(255,0,0,0.65);
+  color: black;
+  box-shadow: 0 0 20px rgba(255,0,0,0.65);
+  font-weight: bold;
+  font-style: italic;
+}
+
+/*Styles for my test table.*/
+table {
+  margin: 30px auto;
+  border-collapse: collapse;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid black;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  width: 60vw;
+}
+
+th, td {
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 12px 20px;
+}
+
+th {
+  background-color: rgba(255,0,0,0.4);
+  color: black;
+  font-weight: bold;
+  font-style: italic;
+}
+
+tr:hover {
+  background-color: rgba(255,0,0,0.25);
+  transition: 0.2s;
 }
