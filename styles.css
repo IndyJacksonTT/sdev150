@@ -44,7 +44,7 @@ header .logo {
     display: block;
     margin: 20px auto;
     height: clamp(48px, 10vw, 120px);
-    width: auto;
+    width: 50vw;
     object-fit: contain;
     filter: 
     drop-shadow(0 0 8px rgba(255,0,0,0.55))
